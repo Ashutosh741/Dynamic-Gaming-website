@@ -1,0 +1,27 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide" >
+  <div class="carousel-indicators">
+    {{#each slides}}
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="{{@index}}" class="{{this.class}}" aria-current="true" aria-label="Slide 1"></button>
+    {{/each}}
+  </div>
+  <div class="carousel-inner carousel-fade">
+    {{#each slides }}
+    <div class="carousel-item {{this.class}}">
+      <img src="{{this.imageUrl}}" class="d-block w-100 slider-image" alt="...">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>{{this.title}}</h5>
+        <p>{{this.subTitle}}</p>
+      </div>
+    </div>
+
+    {{/each}}
+    </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

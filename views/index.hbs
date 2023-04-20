@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "/static/css/style.css"
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.rtl.min.css" integrity="sha384-T5m5WERuXcjgzF8DAb7tRkByEZQGcpraRTinjpywg37AO96WoYN9+hrhDVoM6CaT" crossorigin="anonymous">
+    
+    <title>Dynamic Website Using NodeJs</title>
+  </head>
+  <body>
+    {{>navbar data=details}}
+    {{>slider slides = slides}}
+
+
+    {{!-- banner1-section  --}}
+
+    {{!-- <section class = "banner1-section">
+        <div class="container">
+            <div class="row text-center ptb">
+                <div class="col">
+                    <h3>
+                    Latest Games
+                    </h3>
+                    <div class="container">
+                        <div class="col">
+                            <div class="row-2">
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13535/800x450/the-sims-4-growing-together-pc-mac-game-origin-preview.webm?v=1675419835\" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13481/800x450/redfall-bite-back-edition-bite-back-edition-pc-game-steam-preview.webm?v=1674720772" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13417/800x450/ride-5-pc-game-steam-preview.webm?v=1681394244" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13390/800x450/street-fighter-6-deluxe-edition-deluxe-edition-pc-game-steam-preview.webm?v=1673439889" type="video/mp4">
+                                </video>
+                                </div>
+                                 <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13486/800x450/the-elder-scrolls-online-deluxe-upgrade-necrom-deluxe-upgrade-pc-mac-game-preview.webm?v=1674730324" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/13402/800x450/dead-island-2-gold-edition-xbox-one-xbox-series-x-s-gold-edition-xbox-series-x-s-xbox-one-game-microsoft-store-preview.webm?v=1681805072" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/9143/800x450/star-wars-jedi-survivor-pc-game-origin-preview.webm?v=1681311827" type="video/mp4">
+                                </video>
+                                </div>
+                                <div class="card">
+                                <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                                <source src="https://gaming-cdn.com/videos/products/6745/800x450/boundary-pc-game-steam-preview.webm?v=1681394484" type="video/mp4">
+                                </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    {{!-- services section --}}
+
+    <section id = "services_section" class = "py-5">
+        <div class="container-fluid">
+            <h1 class = "text-center text-secondary">Trending Games</h1>
+        <div class="row">
+            {{!-- first service column --}}
+            {{#each services}}
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src = "{{this.image}}">
+                        <h5 class="caption ">{{this.description}}</h5>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        </div>
+    </section>
+
+    {{!-- contact us Section --}}
+    <section id = "contact_us_section ptb-100 "class = "background1">
+        <div class="container">
+            <h3 class = "text-center text-secondary py-3"> Contact Us</h3>
+            <div class="row">
+                <div class="col">
+                    <form action = "/process-contact-form" method = "post">
+                        <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+                        <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                        <label name = "number" for="contactNumber" class="form-label">Contact Number</label>
+                        <input type="" class="form-control" id="contactNumber">
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+                        <textarea  name = "query" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                        </div>
+                        <div class="container text-center">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src = "/script/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
